@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-const ToDo = ({ title, completed, removeTodoItem }) => {
+const ToDo = ({ title, completed, removeTodoItem, updateTodo }) => {
     const [isEditing, setIsEditing] = useState(false);
     const [value, setValue] = useState(title);
     const [tempVal, setTempVal] = useState(title);
@@ -14,6 +14,7 @@ const ToDo = ({ title, completed, removeTodoItem }) => {
         const key = e.keyCode;
 
         if(key===13){
+            updateTodo({ title: tempVal });
             setValue(tempVal);
             setIsEditing(false);
         }
