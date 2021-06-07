@@ -67,7 +67,7 @@ const App = ()=>{
                 removeTodo={removeToDo}/>
         </Section>
     </div>
-    <ToastContainer autoClose={2500}/>
+    <ToastContainer autoClose={2000}/>
     </>
 }
 

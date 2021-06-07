@@ -29,7 +29,11 @@ const ToDo = ({ title, completed, removeTodoItem, updateTodo }) => {
     };
 
     const handleComplete = ()=>{
-        setComplete(complete=>!complete);
+        setComplete((complete)=>{
+            const newState = !complete;
+            updateTodo({ complete: newState });
+            return newState;
+        });
     }
 
     return (
